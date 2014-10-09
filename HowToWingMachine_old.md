@@ -2,17 +2,18 @@
 **Instruction guide for the DworkinLab TPSdig -> WingMachine -> CPReaderer workflow**
 ===
 
+Last edited date: *Tuesday, 30 September 2014*
+
 Greetings future DworkinLab member! This guide is intended to walk you through the latest version of our workflow for turning wing images fresh off the 'scope into landmark and semilandmark coordinate data. Conceptually, we are doing this to the images:
 
 ![Splined_wing](./Splined_wing.jpg)
 
-This workflow involves a number of different bits of software and can be irritating the first time through – please read along as you go if you're new since missing one of the early steps will force you to backtrack which can be frustrating.
+This process can be awkward and irritating the first time through, since there are a number of different bits of software involved, and a few places where a small error can derail the workflow. However this is a feature rather than a bug – while you may well discover new bugs & interesting ways to break the system (I'm still finding them!) the only way to get bad *data* out of the workflow is to do a bad job of checking your splines. I shall do my best to include all the most useful tips that I can in the troubleshooting section, but if you're using the software *please* keep notes of bugs and crashes so that you can add to this manual for you successors.
 
-I've tried to streamline things as much as possible and to document the problems that people have told me about in the troubleshooting section. If you're using the system them *please* feel free to add to this document so that you successors can learn from your experience of bugs/crashes/errors etc.
+Happy Splining,
 
-Happy Splining!
+      Will Pitchers 
 
-Dr. Will Pitchers
 
 ***Step 0. Prepare your images***
 ---
@@ -174,18 +175,6 @@ These are pretty self-explanatory, but the only one you really need is 'Output_L
 ***Appendix I. Installing the Software***
 ---
 
-**Gimp** can be downloaded from http://www.gimp.org/ and it becomes *way* more useful if you also install David's Batch Processor from http://sourceforge.net/projects/gimpdbpplugin/.
-
-**tpsDig2** can be downloaded from http://life.bio.sunysb.edu/morph/morphmet/tpsdig2w32.exe – just run the *.exe* file to install (windows system only).
-
-I have left a *.zip* archive containing all the necessary files to get **WingMachine** and **CPR** up and running....
-
 
 ***Appendix II. Troubleshooting common issues***
 ---
-
-**WingMachineTPS2.py** script fails – commonly due to extra lines or landmarks in the *.tps* file. Open the *.tps* file with any text editor and search for "LM=0", "LM=1" or "LM=3": any of these strings will indicate an image with too many/few landmarks which will crash the script. Any entirely empty line in the *.tps* file will also cause a problem.
-
-**WingMachine** fails to spline – check that the directory wherein your images live contains no spaces or special characters. This means the entire path: "C:\waiting_wings\mywings" will work but "C:\waiting_wings\my wings" will fail. Similarly, directory paths that are too long will cause the program to fail; try to keep your folders close to the "C:\". The error message in the **WingMachine** log window will usually be "wingsio.exe failed to exit".
-
-**WingMachine** appears to ignore some images, or splines 0 of your images – sometimes this can be the result of your images being saved in a RGB colourspace rather than the Greyscale colourspace that **WingMachine** expects. Check the file sizes of your resized images; the 316 x 240 sized images should be ~75KB in size, over 100KB is a warning sign. You can fix this with **Gimp** or your image editor of choice.
