@@ -190,20 +190,20 @@ I have left a *.zip* archive containing all the necessary files to get **WingMac
 ###Appendix II. Troubleshooting common issues
 ---
 
-**WingMachineTPS2.py** script fails:
+####**WingMachineTPS2.py** script fails:
 – commonly due to extra lines or landmarks in the *.tps* file. 
     - Open the *.tps* file with any text editor and search for "LM=0", "LM=1" or "LM=3": any of these strings will indicate an image with too many/few landmarks which will crash the script. 
 - Any entirely empty line in the *.tps* file will also cause a problem.
 
-**WingMachine** fails to spline:
+####**WingMachine** fails to spline:
 – check that the directory wherein your images live contains no spaces or special characters. This means the entire path: "C:\waiting_wings\mywings" will work but "C:\waiting_wings\my wings" will fail. 
 - Similarly, directory paths that are too long will cause the program to fail; try to keep your folders close to the "C:\". The error message in the **WingMachine** log window will usually be "wingsio.exe failed to exit".
 
-**WingMachine** appears to ignore some images, or splines 0 of your images:
+####**WingMachine** appears to ignore some images, or splines 0 of your images:
 – Sometimes this is the result of your images being saved in a RGB colourspace rather than the Greyscale colourspace that **WingMachine** expects. 
 - Check the file sizes of your resized images; the 316 x 240 sized images should be ~75KB in size, over 100KB is a warning sign. You can fix this with **Gimp** or your image editor of choice.
 
-** Wing Machine ** only splines a modest subset of images:
+####**Wing Machine ** only splines a modest subset of images:
 - These can be more difficult to diagnose.
 - Quality of images are a major culprit (i.e. insufficient contrast).
 - Too much "white space" in the image (i.e. the wing only occupies a small proportion of the image) also is a common issue with this.
