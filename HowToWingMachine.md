@@ -1,5 +1,6 @@
 
-**Instruction guide for the DworkinLab TPSdig -> WingMachine -> CPReaderer workflow**
+## Instruction guide for the DworkinLab 
+** TPSdig -> WingMachine -> CPReaderer workflow**
 ===
 
 Greetings future DworkinLab member! This guide is intended to walk you through the latest version of our workflow for turning wing images fresh off the 'scope into landmark and semilandmark coordinate data. Conceptually, we are doing this to the images:
