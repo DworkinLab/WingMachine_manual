@@ -20,7 +20,7 @@ Dr. Will Pitchers and Dr. Ian Dworkin
 
 Before you begin to landmark, spline etc. make sure that your images are all in .tiff format and named sensibly and uniquely; i.e. something like 'thistest_M13_R_d3_WP.tif' for the right wing of male #13 from day 3 of Will Pitchers' 'thistest' experiment.  a *readme.txt* in each folder of images to document the nomenclature of your filenames is required!
 
-INSERT IMAGE SCALING
+[Please see here](https://github.com/DworkinLab/WingMachine_manual/blob/master/SomeNotesOnCroppingAndResizingImages.md) for more information on resizing images (and other image transformations).
 
 1 - Make sure the photos to spline are copied to the C: drive (currently C:\Will_WM_RAL_test)
   NB- make sure that folder & file names contain no spaces!
