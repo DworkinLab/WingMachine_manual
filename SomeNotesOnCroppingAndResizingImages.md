@@ -15,3 +15,15 @@ Enough said. Make sure you always keep the raw data and just modify copies of th
 # resizing images.
 - resizing images (say from 4080 x 3072 to 632 x 480) will change the scale (i.e the number of px/mm). So make sure you measure the new scale after resizing (in px/mm or mm/px or whatever is the appropriate dimensions for your work).
 - cropping an image and resizing it will result in a different scale than if you just resized the image. So make sure to first crop (see above for notes), then resize, and then measure the new scale (px/mm). 
+
+# greyscale VS colour
+- If you are using your images only for splining wings (or measuring wing size). They you can use greyscale.
+- If you are using the images only for trichome (cell) counts, then use colour (and maximum camera resolution). 
+- if you are using the images for both, produce them in colour (and maximum resolution), but change to greyscale at the same time as you resize them.
+    - Changing to greyscale does not influence the resolution by itself (but the resizing does).
+
+# Notes on bit depth
+- most images we need are 8 bit. Either 8 bit greyscale or 3x8bit (24 bit) colour.
+- We don't need to use the 14 bit greyscale for wing size, splining. 
+- We don't need to use the 12 bit colour for trichome counts.
+- The bit depth influences how many colours at each pixel, but not resolution.
