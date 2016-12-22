@@ -12,31 +12,36 @@ I've tried to streamline things as much as possible and to document the problems
 
 Happy Splining!
 
-Dr. Will Pitchers
+Dr. Will Pitchers and Dr. Ian Dworkin
 
-***Step 0. Prepare your images***
+## Step 0. Prepare your images
 ---
 
-Before you begin to landmark, spline etc. make sure that your images are all in .tiff format and named sensibly and uniquely; i.e. something like 'thistest_M13_R_d3_WP.tiff' for the right wing of male #13 from day 3 of Will Pitchers' 'thistest' experiment. I strongly advise including a *readme.txt* in each folder of images to document the nomenclature of your filenames!
+Before you begin to landmark, spline etc. make sure that your images are all in .tiff format and named sensibly and uniquely; i.e. something like 'thistest_M13_R_d3_WP.tif' for the right wing of male #13 from day 3 of Will Pitchers' 'thistest' experiment.  a *readme.txt* in each folder of images to document the nomenclature of your filenames is required!
 
 INSERT IMAGE SCALING
 
 1 - Make sure the photos to spline are copied to the C: drive (currently C:\Will_WM_RAL_test)
   NB- make sure that folder & file names contain no spaces!
 
-2 - Resize images to 632 x 480 pixels for LANDMARKING - save as TIFs
+2 - Resize images to 632 x 480 pixels for LANDMARKING - save as greyscale TIFs
 
-3 - Resize images to 316 x 240 pixels for SPLINING - save as TIFs
+3 - Resize images to 316 x 240 pixels for SPLINING - save as greyscale TIFs
 
 4 - Landmark the 632 x 480 images - Humeral break, then Alula notch. Save the results file with the 632 x 480 images.
   NB- remember to set scale to pixels ('px') as opposed to mm
   AND: make sure that ImageJ doesn't spool all the way through and have you re-landmark from the first file again!
 
-5 - Run the Python script 'wingmachine_2.1' and direct it to your results file. Scale should read: 3.52E-03
+5 - Run the Python script 'wingmachine_2.1' and direct it to your results file. Scale will depend on the microscope you have used. It is in mm/pixel. Importanly the scale needs to be calculated for the landmarking images (632x480).
   Name the output file Results.asc and drop it into the folder with images to spline.
 
+### Notes on resizing images (and converting to greyscale).
+- You can use the batch converter in GIMP to resize the images, and to convert to greyscale.
+- You can also do batch conversion for size and greyscale in imageJ/fiji (tutorial to be written, but ask Ian).
+    - ImageJ can also do batch cropping (which can be useful, but dangerous).
+    - ImageJ batch conversions seems slower and requires more memory (so do wings in batches).
 
-***Step 1. TPSdig***
+## Step 1. TPSdig
 ---
 
 First up you'll need to launch **tpsUtil** and set up an empty .tps file. Opening **tpsUtil** give you a small window with a few options (see below). Select 'Build tps file from images' from the *Operation* drop-down menu. Click the 'Input' button and navigate to the folder containing your wing images, select any image and click 'Open'. Click the 'Output' button, check that you are in the same folder as your images, and give your .tps file a sensible name and click 'Save'. Click the 'Setup' button and make sure that the 'Include path?' checkbox is *not* checked before clicking 'Create'. You are now ready to landmark your images, click 'Close' to exit **tpsUtil** and boot up **tpsDig**.
@@ -58,7 +63,7 @@ Next, open the folder that contains your images and your .tps file and copy into
 - 'Your Name' – which you ought to know!
 - 'Species' – this will most likely be *melanogaster*, we usually shorted to 'mel'
 - 'Sex' – 'M' or 'F' if your images are all 1 sex, 'MF' if they are a mix
-- 'Scale' – expressed in mm/pixel and written using digits only (usually ~0.007)
+- 'Scale' – expressed in mm/pixel and written using digits only.
 
 Once the script runs, you will have a .asc file. This is plain text so that you can open it in any text editor to check that it is correctly formatted. The .tps is on the left, with the .asc on the right:
 
@@ -67,7 +72,7 @@ Once the script runs, you will have a .asc file. This is plain text so that you 
 Once you have your *.asc*, copy it into the directory that holds your small (splining size) images and you should be ready to WingMachine.
 
 
-***Step 2. WingMachine***
+## Step 2. WingMachine
 ---
 
 When you launch **WingMachine** you may see a warning window (e.g. below) about letting 'Java runtime environment' make changes to your computer. You will need to approve this in order for **WingMachine** to run.
@@ -111,7 +116,7 @@ When you have finished your image set, or have run out of time for your current 
 While you're editing the splines, **WingMachine** will update the *.cp* files that hold the individual data. Each time you edit a spline and move to the next image a copy of the *.cp* file will be saved with a numeric suffix e.g. *wing1001.cp* –> *wing1001.cp.1*. As you edit you will therefore be increasing the number of files in your splining folder; do not be concerned, since **CPR** is smart enough to disregard all but the newest *.cp* file for each individual when you come to superimposiny your splines.
 
 
-***Step 3. CPReaderer***
+## Step 3. CPReaderer
 ---
 
 Launching **CPR** will first open a DOS terminal window, and there may be some delay before the GUI window appears – this is normal, so don't panic. When the GUI appears it ought to look like this:
@@ -171,7 +176,7 @@ These are pretty self-explanatory, but the only one you really need is 'Output_L
 ---
 
 
-***Appendix I. Installing the Software***
+###Appendix I. Installing the Software (ID: Needs to be updated(
 ---
 
 **Gimp** can be downloaded from http://www.gimp.org/ and it becomes *way* more useful if you also install David's Batch Processor from http://sourceforge.net/projects/gimpdbpplugin/.
@@ -181,7 +186,7 @@ These are pretty self-explanatory, but the only one you really need is 'Output_L
 I have left a *.zip* archive containing all the necessary files to get **WingMachine** and **CPR** up and running....
 
 
-***Appendix II. Troubleshooting common issues***
+###Appendix II. Troubleshooting common issues
 ---
 
 **WingMachineTPS2.py** script fails – commonly due to extra lines or landmarks in the *.tps* file. Open the *.tps* file with any text editor and search for "LM=0", "LM=1" or "LM=3": any of these strings will indicate an image with too many/few landmarks which will crash the script. Any entirely empty line in the *.tps* file will also cause a problem.
