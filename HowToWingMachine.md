@@ -41,7 +41,8 @@ Before you begin to landmark, spline etc. make sure that your images are all in 
 - You can also do batch conversion for size and greyscale in imageJ/fiji (tutorial to be written, but ask Ian).
     - ImageJ can also do batch cropping (which can be useful, but dangerous).
     - ImageJ batch conversions seems slower and requires more memory (so do wings in batches).
-
+    - the `WINGS` program below (and thus the python script) require the scale to be in mm/px for the images at 632 x 480. Please keep track of your scale inputted as this is a common source of confusion!
+    
 ## Step 1. TPSdig
 ---
 
@@ -64,7 +65,7 @@ Next, open the folder that contains your images and your .tps file and copy into
 - 'Your Name' – which you ought to know!
 - 'Species' – this will most likely be *melanogaster*, we usually shorted to 'mel'
 - 'Sex' – 'M' or 'F' if your images are all 1 sex, 'MF' if they are a mix
-- 'Scale' – expressed in mm/pixel and written using digits only.
+- 'Scale' – expressed in mm/pixel and written using digits only. **Use the the 632 x 480 to calculate the scale, not the raw image!**
 
 Once the script runs, you will have a .asc file. This is plain text so that you can open it in any text editor to check that it is correctly formatted. The .tps is on the left, with the .asc on the right:
 
