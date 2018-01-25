@@ -43,7 +43,8 @@ After resizing image to 632 x 480 px (c = 632)
 
 d =  0.00347 (mm/px)
 
-**With the 2X objective: **
+**With the 2X objective:**
+
  For the original image
  
  a = 4080 px, b = 0.00108 mm/px,
