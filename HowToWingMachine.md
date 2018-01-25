@@ -20,7 +20,7 @@ Dr. Will Pitchers and Dr. Ian Dworkin
 
 Before you begin to landmark, spline etc. make sure that your images are all in .tiff format and named sensibly and uniquely; i.e. something like 'thistest_M13_R_d3_WP.tif' for the right wing of male #13 from day 3 of Will Pitchers' 'thistest' experiment.  a *readme.txt* in each folder of images to document the nomenclature of your filenames is required!
 
-[Please see here](https://github.com/DworkinLab/WingMachine_manual/blob/master/SomeNotesOnCroppingAndResizingImages.md) for more information on resizing images (and other image transformations).
+[Please see here](https://github.com/DworkinLab/WingMachine_manual/blob/master/SomeNotesOnCroppingAndResizingImages.md) for more information on resizing images (and other image transformations). This also has information on calculating the correct scale (in mm/px) that you will need below.
 
 1 - Make sure the photos to spline are copied to the C: drive (currently C:\Will_WM_RAL_test)
   NB- make sure that folder & file names contain no spaces!
@@ -66,6 +66,7 @@ Next, open the folder that contains your images and your .tps file and copy into
 - 'Species' – this will most likely be *melanogaster*, we usually shorted to 'mel'
 - 'Sex' – 'M' or 'F' if your images are all 1 sex, 'MF' if they are a mix
 - 'Scale' – expressed in mm/pixel and written using digits only. **Use the the 632 x 480 to calculate the scale, not the raw image!**
+  - If you are using the Dworkin lab (McMaster) BX43 Microscope with DP10 camera, and images are taken at full resolution (4080 x 3072), then for images taken with the 4X objective, the scale for the resized images is 0.00347, while for images taken with the 2X objective, the scale for the resized images is 0.00697. See [here](https://github.com/DworkinLab/WingMachine_manual/blob/master/SomeNotesOnCroppingAndResizingImages.md) for more information
 
 Once the script runs, you will have a .asc file. This is plain text so that you can open it in any text editor to check that it is correctly formatted. The .tps is on the left, with the .asc on the right:
 
