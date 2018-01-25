@@ -21,10 +21,13 @@ Enough said. Make sure you always keep the raw data and just modify copies of th
   
   With
   a = width of full size original image in number of pixels.
+  
   b = mm/px (or um/px if you want) for the full size image.
+  
   c = width of resized image in number of pixels.
   
   So the numerator gives the width of the original full size image in mm, scaled by the width of the resized image in pixels.
+  
   d = mm/px for the resized image.
   
 - For our current microscope system at McMaster (the Olympus BX 43 with the DP10 camera), we capture most wing images using either the 2X or 4X at full (4080 x 3072) resolution. For rescaling during the spline (i.e. resizing image to 632 x 480).
@@ -32,17 +35,22 @@ Enough said. Make sure you always keep the raw data and just modify copies of th
  ** With the 4X objective: **
  For the original image
  a = 4080 px, b = 0.0005375 mm/px,
+ 
  a x b = 2.193 mm (width)
 
 After resizing image to 632 x 480 px (c = 632)
+
 d =  0.00347 (mm/px)
 
 ** With the 2X objective: **
  For the original image
+ 
  a = 4080 px, b = 0.00108 mm/px,
+ 
  a x b = 4.4064 mm (width)
 
 After resizing image to 632 x 480 px (c = 632)
+
 d =  0.00697 mm/px
 
 ## Greyscale VS colour
