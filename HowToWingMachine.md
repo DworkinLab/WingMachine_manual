@@ -33,7 +33,7 @@ Before you begin to landmark, spline etc. make sure that your images are all in 
   NB- remember to set scale to pixels ('px') as opposed to mm
   AND: make sure that ImageJ doesn't spool all the way through and have you re-landmark from the first file again!
 
-5 - Run the Python script 'wingmachine_2.1' and direct it to your results file. Scale will depend on the microscope you have used. It is in mm/pixel. Importanly the scale needs to be calculated for the landmarking images (632x480).
+5 - Run the Python script 'wingmachine_2.1' and direct it to your results file. Scale will depend on the microscope you have used, image resolution, and whether you have done any cropping and resizing. You provide scale in mm/pixel. Importanly the scale needs to be calculated for the landmarking image size (632x480).
   Name the output file Results.asc and drop it into the folder with images to spline.
 
 ### Notes on resizing images (and converting to greyscale).
@@ -66,7 +66,7 @@ Next, open the folder that contains your images and your .tps file and copy into
 - 'Species' – this will most likely be *melanogaster*, we usually shorted to 'mel'
 - 'Sex' – 'M' or 'F' if your images are all 1 sex, 'MF' if they are a mix
 - 'Scale' – expressed in mm/pixel and written using digits only. **Use the the 632 x 480 to calculate the scale, not the raw image!**
-  - If you are using the Dworkin lab (McMaster) BX43 Microscope with DP10 camera, and images are taken at full resolution (4080 x 3072), then for images taken with the 4X objective, the scale for the resized images is 0.00347, while for images taken with the 2X objective, the scale for the resized images is 0.00697. See [here](https://github.com/DworkinLab/WingMachine_manual/blob/master/SomeNotesOnCroppingAndResizingImages.md) for more information
+  - If you are using the Dworkin lab (McMaster) BX43 Microscope with DP10 camera, and images are taken at full resolution (4080px X 3072px), then for images taken with the 4X objective (2.193mm X 1.6512 mm), the scale for the resized images is 0.00347, while for images taken with the 2X objective, the scale for the resized images is 0.00697. If you crop the images you have to do some additional calculations. See [here](https://github.com/DworkinLab/WingMachine_manual/blob/master/SomeNotesOnCroppingAndResizingImages.md) for more information
 
 Once the script runs, you will have a .asc file. This is plain text so that you can open it in any text editor to check that it is correctly formatted. The .tps is on the left, with the .asc on the right:
 
