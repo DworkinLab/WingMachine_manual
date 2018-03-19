@@ -33,9 +33,6 @@ Enough said. Make sure you always keep the raw data and just modify copies of th
   
 - For our current microscope system at McMaster (the Olympus BX 43 with the DP10 camera), we capture most wing images using either the 2X or 4X at full (4080 x 3072) resolution. For rescaling during the spline (i.e. resizing image to 632 x 480).
 
-- If you are cropping images for splining (typically for an image taken at 2X), and you crop prior to resizing images (which is easier I gather), then you need to adjust the scale that you will use in the Python script to generate the `.asc` file. 
-    - Example you crop a 2X image (4080px x 3072px which is 4.4mm x 3.3mm, or a scale of 0.00108mm/px) to 3580px x 2696px. The new width of the image is 3580 px * 0.00108 mm/px = 3.8664 mm. Now you resize this image to 632px X 480px. The scale for the resized image is now 3.8664 mm/632px = 0.006118 mm/px.
-
  **With the 4X objective:**
  
  For the original image
@@ -59,6 +56,12 @@ After resizing image to 632 x 480 px (c = 632)
 
 d =  0.00697 mm/px
 
+
+## **Important notes for cropped (and resized) images for scale**
+
+- If you are cropping images for splining (typically for an image taken at 2X), and you crop prior to resizing images (which is easier I gather), then you need to adjust the scale that you will use in the Python script to generate the `.asc` file. 
+    - Example you crop a 2X image (4080px X 3072px which is 4.4mm X 3.3mm, or a scale of 0.00108mm/px) to 3580px X 2696px. The new width of the image is 3580 px * 0.00108 mm/px = 3.8664 mm. Now you resize this image to 632px X 480px. The scale for the resized image is now 3.8664 mm/632px = 0.006118 mm/px.
+    
 ## Greyscale VS colour
 - If you are using your images only for splining wings (or measuring wing size). They you can use greyscale.
 - If you are using the images only for trichome (cell) counts, then use colour (and maximum camera resolution). 
